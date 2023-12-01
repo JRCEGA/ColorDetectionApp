@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bluetooth Serial Communication</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/boxicons.min.css">
+</head>
+<body>
+    <button id="backButton">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+            <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"/>
+        </svg> Volver
+    </button>
+    
+    <div class="centered-content">
+        <h1 id="bluetoothLinkText">Dispositivo enlazado!</h1>
+        <div class="connectdis-button">
+            <button id="connectButton" onclick="console.log('Boton clickeado')">Conectar/Desconectar Bluetooth</button>
+        </div>
+        <div id="statusMessage"></div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/config_bluetooth.js"></script>
+</body>
+</html>

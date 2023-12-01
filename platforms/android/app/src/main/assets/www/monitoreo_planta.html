@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bluetooth Serial Communication</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/boxicons.min.css">
+</head>
+<body>
+    <button id="backButton">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+            <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"/>
+        </svg> Volver
+    </button>
+
+    <div class="plantMonitorContainer">
+        <div id="plantMonitorText">Presiona el siguiente boton para tomar muestra de la planta</div>
+        <button id="plantReadingButton">Tomar Muestra</button>
+    </div>
+
+    <div class="plantMonitorInformationContainer">
+        <div id="label1" style="display: none;">El color detectado es el siguiente:
+            <div class="color-and-values-containerPlantMonitoring">
+                <div id="colorDisplayTerminal" class="color-displayTerminal"></div>
+                <div class="rgb-valuesPlant">
+                    <p id="rLabel">R: 0</p>
+                    <p id="gLabel">G: 0</p>
+                    <p id="bLabel">B: 0</p>
+                </div>
+            </div>
+        </div>
+        <div id="mensajeSaludable" style="display: none;">
+            <div id="label2">La planta se encuentra en un estado saludable!</div>
+            <div id="listStart1">Aqui te dejo algunas recomendaciones para mantenerla asi:</div>
+            <ul>
+                <li><span id="boldText">Riego Adecuado: </span> las necesidades especificas de la planta, evitando el exceso de agua.</li>
+                <li><span id="boldText">Luz adecuada: </span> la cantidad correcta de luz natural, ya sea directa o indirecta, segun la planta.</li>
+                <li><span id="boldText">Fertilizacion regular: </span> fertilizantes apropiados con moderacion para nutrir la planta.</li>
+                <li><span id="boldText">Inspeccion de plagas y enfermedades: </span> la planta regularmente para detectar y tratar cualquier signo de plagas o enfermedades.</li>
+            </ul>
+        </div>
+        <div id="mensajeModerado" style="display: none;">
+            <div id="label2">La planta se encuentra en un estado moderado, se recomienda atencion.</div>
+            <div id="listStart1">Aqui te dejo algunas recomendaciones para tratar esto:</div>
+            <ul>
+                <li><span id="boldText">Ajuste del riego: </span>Modifica la frecuerncia y cantidad de riego segun las señales de la planta, como hojas marchitas, etc.</li>
+                <li><span id="boldText">Reubicacion para luz adecuada: </span>Traslada la planta a un lugar con mejor iluminacion, ya sea mas luz o menos.</li>
+                <li><span id="boldText">Podar partes dañadas: </span>Elimina hojas, tallos o flores marchitas o dañadas para ayudar a la planta a enfocar su energia en crecimiento saludable.</li>
+                <li><span id="boldText">Fertilizacion equilibrada: </span>Utiliza un fertilizante adecuado para fortalecer la planta, pero sin excederte para evitar daños por sobrefertilizacion.</li>
+            </ul>
+        </div>
+        <div id="mensajeNoSaludable" style="display: none;">
+            <div id="label2">La planta se encuentra en un estado critico, se requiere atencion inmediata.</div>
+            <div id="listStart1">Aqui te dejo algunas recomendaciones para tratar esto:</div>
+            <ul>
+                <li><span id="boldText">Trasplante a nueva tierra y maceta: </span>Si el sustrato o la maceta estan causando problemas como mala aireacion o drenaje, trasplanta la planta en un nuevo lugar.</li>
+                <li><span id="boldText">Riego de emergencia: </span>Si la planta esta extremadamente deshidratada, sumergela en un baño de agua durante horas para rehidratarla por completo.</li>
+                <li><span id="boldText">Revisar la iluminacion: </span>Si la planta esta recibiendo demasiado sol o muy poca luz, muevela a un lugar con condiciones de iluminacion mas adecuadas.</li>
+                <li><span id="boldText">Soporte fisico: </span>Si la planta esta debil y no puede sostenerse por si misma, proporciona soportes como estacas para ayudarte a mantenerse erguida.</li>
+            </ul>
+        </div>
+        <div id="mensajeError" style="display: none;">
+            <div id="label2">Lo siento, no se ha detectado un color valido que asemeje una planta, vuelve a intentar.</div>
+            <img src="../img/error.png" width="100">
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/config_bluetooth.js"></script>
+    <script type="text/javascript" src="js/monitoreo_planta.js"></script>
+</body>
+</html>
