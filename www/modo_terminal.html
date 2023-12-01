@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bluetooth Serial Communication</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/boxicons.min.css">
+</head>
+<body>
+    <button id="backButton">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+            <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"/>
+        </svg> Volver</button>
+
+    <div class="introTerminalModeContainer">
+        <div id="introTerminalModeLabel">Aparte de ver los datos en la terminal, puedes configurar el sensor con distintos comandos. Intentalo!</div> 
+    </div>
+    <div id="sensorInterface">
+        <div class="color-and-values-containerTerminal">
+            <div id="colorDisplay" class="color-display"></div>
+            <div class="rgb-values">
+                <p id="rLabel">R: 0</p>
+                <p id="gLabel">G: 0</p>
+                <p id="bLabel">B: 0</p>
+            </div>
+        </div>
+        <div class="controls">
+            <!-- Añade aquí botones adicionales para gamma, calibrar, resetear, etc. -->
+        </div>
+        <div class="terminalModeContainer">
+            <h3 class="terminal-label">Terminal</h3>
+            <div id="bluetoothData" class="bluetooth-data">
+                <!-- Los datos recibidos del Bluetooth se mostrarán aquí -->
+            </div>
+            <textarea id="commandInput" class="terminal-input" placeholder="Presioname para escribir un comando personalizado..." onkeydown="if(event.key === 'Enter'){ event.preventDefault(); sendCommand(); }"></textarea>
+        </div>
+        <div id="buttonslabel">Aqui hay algunos comandos por defecto que son utiles</div>
+        <button id="CMONButton" class="command-buttons">Activar Lectura Continua</button>
+        <button id="CMOFFButton" class="command-buttons">Desactivar Lectura Continua</button>
+        <button id="SRButton" class="command-buttons">Recibir Lectura Unica</button>
+        <button id="LOFFButton" class="command-buttons">Desactivar Luz LED</button>
+        <button id="LONButton" class="command-buttons">Activar Luz LED</button>
+        <button id="CALButton" class="command-buttons">Calibracion (Util para modo libre)</button>
+
+    </div>
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/config_bluetooth.js"></script>
+    <script type="text/javascript" src="js/modo_terminal.js"></script>
+</body>
+</html>
